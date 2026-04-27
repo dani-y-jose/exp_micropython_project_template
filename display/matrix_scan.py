@@ -2,9 +2,9 @@ import machine
 import neopixel
 import time
 
-DATA_PIN = 14
-WIDTH = 8
-HEIGHT = 8
+DATA_PIN = 16
+WIDTH = 5
+HEIGHT = 5
 NUM_LEDS = WIDTH * HEIGHT
 
 np = neopixel.NeoPixel(machine.Pin(DATA_PIN, machine.Pin.OUT), NUM_LEDS)

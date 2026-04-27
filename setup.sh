@@ -14,6 +14,9 @@ mkdir -p .vscode
 echo "==> Installing micropython-esp32-stubs into .vscode/stubs"
 uv pip install --target .vscode/stubs micropython-esp32-stubs
 
+echo "==> Overlaying micropython-rp2-stubs (common modules get RP2 signatures; ESP32-only modules survive)"
+uv pip install --target .vscode/stubs micropython-rp2-stubs
+
 echo "==> Fetching ssd1306.py for autocomplete (driver is mip-installed at runtime)"
 curl -fsSL -o .vscode/stubs/ssd1306.py \
     https://raw.githubusercontent.com/micropython/micropython-lib/master/micropython/drivers/display/ssd1306/ssd1306.py
@@ -29,6 +32,9 @@ cat > .vscode/settings.json <<'JSON'
         "${workspaceFolder}/.vscode/stubs"
     ],
     "python.analysis.extraPaths": [
+        "${workspaceFolder}/.vscode/stubs"
+    ],
+    "python.analysis.typeshedPaths": [
         "${workspaceFolder}/.vscode/stubs"
     ]
 }

@@ -1,11 +1,13 @@
 import framebuf
+import time
 from machine import I2C, Pin
 from ssd1306 import SSD1306_I2C
 
 from lib.mesh import MeshNode
 
 # Change this per board before flashing.
-NODE_ID = "NEO"
+NODE_ID = "Trinity"
+INTERVAL_MS = 2000
 
 WIDTH = 72
 HEIGHT = 40
@@ -63,11 +65,16 @@ print("mesh oled node", NODE_ID, "active")
 counter = 0
 render(oled, counter)
 
+next_tx = time.ticks_add(time.ticks_ms(), INTERVAL_MS)
 while True:
-    pkt = mesh.recv(timeout_ms=2000)
+    remaining = time.ticks_diff(next_tx, time.ticks_ms())
+    if remaining <= 0:
+        counter += 1
+        status = "alert" if counter % 5 == 0 else "ok"
+        mesh.broadcast({"count": counter, "status": status})
+        render(oled, counter)
+        next_tx = time.ticks_add(time.ticks_ms(), INTERVAL_MS)
+        continue
+    pkt = mesh.recv(timeout_ms=remaining)
     if pkt and pkt.get("id") != NODE_ID:
         print("rx:", pkt)
-    counter += 1
-    status = "alert" if counter % 5 == 0 else "ok"
-    mesh.broadcast({"count": counter, "status": status})
-    render(oled, counter)

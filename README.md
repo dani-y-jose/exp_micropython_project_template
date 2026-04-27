@@ -85,6 +85,7 @@ imports — the script's location on disk doesn't affect import resolution.
 | [matrix_scan.py](display/matrix_scan.py) | Walks one lit pixel across an 8×8 NeoPixel matrix in R/G/B. |
 | [matrix_heartbeat.py](display/matrix_heartbeat.py) | Heartbeat ripple from the center of an 8×8 matrix with gaussian shading. |
 | [oled_c3_hello.py](display/oled_c3_hello.py) | Text + counter on the 0.42" 72×40 OLED found on cheap ESP32-C3 dev boards. Requires `mpremote mip install ssd1306`. |
+| [rp2040_matrix_pio.py](display/rp2040_matrix_pio.py) | PIO-driven WS2812 scan on the Waveshare **RP2040-Matrix** (5×5 on GPIO 16). Smoke test for `rp2.asm_pio` + RP2 stubs. |
 
 > The matrix examples assume serpentine wiring (row 0 left-to-right, row 1
 > right-to-left, …). If a scan looks scrambled, change the body of `xy()` to

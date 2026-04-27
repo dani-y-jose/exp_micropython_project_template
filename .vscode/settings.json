@@ -8,5 +8,8 @@
     ],
     "python.analysis.extraPaths": [
         "${workspaceFolder}/.vscode/stubs"
+    ],
+    "python.analysis.typeshedPaths": [
+        "${workspaceFolder}/.vscode/stubs"
     ]
 }
