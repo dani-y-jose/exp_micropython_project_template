@@ -113,6 +113,11 @@ when the project is mounted on the device.
 | [mesh_node_oled.py](wireless/mesh_node_oled.py) | Same as `mesh_node.py` but for the ESP32-C3 + 0.42" OLED — shows `NODE_ID` (auto-scaled) on top and the counter below. |
 | [mesh_gateway_matrix.py](wireless/mesh_gateway_matrix.py) | Same as `mesh_gateway.py` but for the ESP32-S3 Matrix — flashes a green/red ripple on the 8×8 NeoPixel for each rx. |
 
+## Boards tested
+These examples have been tested on the following boards:
+ - ESP32-S3-Matrix: https://www.waveshare.com/wiki/ESP32-S3-Matrix?srsltid=AfmBOopRwK_TgCe_9eHRUkr87aS4qEkcky4dDwNLNk41HUgigBWvo-Ql
+ - ESP32-C3-oled 0.43 inch: https://es.aliexpress.com/item/1005009045080441.html?aff_fcid=ec35395f0fb3456eb391842ca16ea946-1777325997182-00427-_omjsoRl&tt=CPS_NORMAL&aff_fsk=_omjsoRl&aff_platform=shareComponent-detail&sk=_omjsoRl&aff_trace_key=ec35395f0fb3456eb391842ca16ea946-1777325997182-00427-_omjsoRl&terminal_id=270c822faf5648f597db32bfb246a08b&afSmartRedirect=y
+
 ## Useful `mpremote` commands
 
 ```bash

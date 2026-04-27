@@ -4,7 +4,7 @@
     },
     "python.analysis.typeCheckingMode": "basic",
     "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/.vscode/stubs" 
+        "${workspaceFolder}/.vscode/stubs"
     ],
     "python.analysis.extraPaths": [
         "${workspaceFolder}/.vscode/stubs"
