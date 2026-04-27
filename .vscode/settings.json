@@ -1,0 +1,12 @@
+{
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/.vscode/stubs" 
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/.vscode/stubs"
+    ]
+}
