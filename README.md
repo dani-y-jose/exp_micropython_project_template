@@ -49,17 +49,39 @@ Open any `.py` file and trigger one of the two tasks:
 
 ## Example files
 
+### Root
+
 | File | What it does |
 |---|---|
 | [blink.py](blink.py) | Plain on/off blink on a single GPIO. Adjust `LED_PIN` for your board. |
-| [neopixel_blink.py](neopixel_blink.py) | Blinks a single NeoPixel on `DATA_PIN = 14`. |
-| [matrix_scan.py](matrix_scan.py) | Walks one lit pixel across an 8×8 NeoPixel matrix in R/G/B. |
-| [matrix_heartbeat.py](matrix_heartbeat.py) | Heartbeat ripple from the center of an 8×8 matrix with gaussian shading. |
-| [wifi_connect.py](wifi_connect.py) | STA-mode WiFi connect with timeout. Edit `SSID` / `PASSWORD` before running. |
+
+### [display/](display/)
+
+| File | What it does |
+|---|---|
+| [neopixel_blink.py](display/neopixel_blink.py) | Blinks a single NeoPixel on `DATA_PIN = 14`. |
+| [matrix_scan.py](display/matrix_scan.py) | Walks one lit pixel across an 8×8 NeoPixel matrix in R/G/B. |
+| [matrix_heartbeat.py](display/matrix_heartbeat.py) | Heartbeat ripple from the center of an 8×8 matrix with gaussian shading. |
 
 > The matrix examples assume serpentine wiring (row 0 left-to-right, row 1
 > right-to-left, …). If a scan looks scrambled, change the body of `xy()` to
 > `return y * WIDTH + x` for plain row-major.
+
+### [wifi/](wifi/)
+
+| File | What it does |
+|---|---|
+| [wifi_connect.py](wifi/wifi_connect.py) | STA-mode WiFi connect with timeout. Edit `SSID` / `PASSWORD` before running. |
+
+### [espnow/](espnow/)
+
+Peer-to-peer messaging between ESP boards over ESP-NOW (no router required).
+Both ends must use the same channel.
+
+| File | What it does |
+|---|---|
+| [espnow_gateway.py](espnow/espnow_gateway.py) | Listens for ESP-NOW packets on channel 1 and prints any JSON payload received. |
+| [espnow_node.py](espnow/espnow_node.py) | Broadcasts a JSON status message every 2s. Edit `NODE_ID` per board before flashing. |
 
 ## Useful `mpremote` commands
 
