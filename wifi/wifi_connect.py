@@ -2,7 +2,7 @@ import network
 import time
 
 SSID = "JoseNET"
-PASSWORD = "password123"
+PASSWORD = "pass"
 TIMEOUT_S = 15
 
 wlan = network.WLAN(network.STA_IF)

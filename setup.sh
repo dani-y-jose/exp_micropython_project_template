@@ -14,6 +14,10 @@ mkdir -p .vscode
 echo "==> Installing micropython-esp32-stubs into .vscode/stubs"
 uv pip install --target .vscode/stubs micropython-esp32-stubs
 
+echo "==> Fetching ssd1306.py for autocomplete (driver is mip-installed at runtime)"
+curl -fsSL -o .vscode/stubs/ssd1306.py \
+    https://raw.githubusercontent.com/micropython/micropython-lib/master/micropython/drivers/display/ssd1306/ssd1306.py
+
 echo "==> Writing .vscode/settings.json"
 cat > .vscode/settings.json <<'JSON'
 {
@@ -38,7 +42,7 @@ cat > .vscode/tasks.json <<'JSON'
         {
             "label": "MicroPython: Live Run (RAM)",
             "type": "shell",
-            "command": "uvx mpremote run ${file}",
+            "command": "uvx mpremote mount . run ${file}",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -53,7 +57,7 @@ cat > .vscode/tasks.json <<'JSON'
         {
             "label": "MicroPython: Upload to Flash",
             "type": "shell",
-            "command": "uvx mpremote cp ${file} :${fileBasename} + reset",
+            "command": "uvx mpremote cp -r lib : + cp ${file} :main.py + reset",
             "group": "build",
             "presentation": {
                 "reveal": "always",

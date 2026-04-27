@@ -4,7 +4,7 @@ import network
 import time
 
 # Change this per board before flashing.
-NODE_ID = "C3_Alpha"
+NODE_ID = "NEO"
 CHANNEL = 1
 
 sta = network.WLAN(network.STA_IF)

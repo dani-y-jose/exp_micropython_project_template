@@ -1,10 +1,13 @@
 import machine
 import time
+from lib.utils import greeting
 
 # Adjust to your board's onboard LED (commonly 2 on ESP32 DevKit, 48 on ESP32-S3).
 LED_PIN = 2
 
 led = machine.Pin(LED_PIN, machine.Pin.OUT)
+
+greeting()
 
 while True:
     led.value(1)

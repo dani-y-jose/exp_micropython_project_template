@@ -4,7 +4,7 @@
         {
             "label": "MicroPython: Live Run (RAM)",
             "type": "shell",
-            "command": "uvx mpremote run ${file}",
+            "command": "uvx mpremote mount . run ${file}",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -19,7 +19,7 @@
         {
             "label": "MicroPython: Upload to Flash",
             "type": "shell",
-            "command": "uvx mpremote cp ${file} :${fileBasename} + reset",
+            "command": "uvx mpremote cp -r lib : + cp ${file} :main.py + reset",
             "group": "build",
             "presentation": {
                 "reveal": "always",
