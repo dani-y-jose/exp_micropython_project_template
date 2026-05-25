@@ -40,9 +40,9 @@ elif PLATFORM == "rp2":
         _Pin("LED")
         LED = "LED"
     except (ValueError, TypeError):
-        LED = 15
+        LED = 25
     BUTTON = 14
-    PWM_LED = 15
+    PWM_LED = 25
     SERVO = 16
     ADC = 26             # GP26 = ADC0
     I2C_ID = 0
@@ -53,6 +53,22 @@ elif PLATFORM == "rp2":
     SPI_MOSI = 11
     SPI_MISO = 12
     SPI_CS = 13
+    # Pimoroni Pico Explorer Base onboard ST7789 LCD (240x240, SPI0).
+    # Coexists with the generic SPI_* pins above (which target the breadboard
+    # SD/sensor wiring on SPI1).
+    ST7789_SPI_ID = 0
+    ST7789_SCK = 18
+    ST7789_MOSI = 19
+    ST7789_CS = 17
+    ST7789_DC = 16
+    ST7789_BL = 20
+    ST7789_WIDTH = 240
+    ST7789_HEIGHT = 240
+    # Pico Explorer Base onboard buttons (active-low, internal pull-up).
+    BTN_A = 12
+    BTN_B = 13
+    BTN_X = 14
+    BTN_Y = 15
     # NeoPixel / WS2812. RP2040-Zero onboard NeoPixel and Waveshare RP2040-Matrix
     # both use GP16. Matrix defaults to 5×5 (Waveshare); change to 1×1 if you
     # only have the Zero's single pixel and are running matrix scripts.
@@ -60,5 +76,9 @@ elif PLATFORM == "rp2":
     MATRIX_PIN = 16
     MATRIX_WIDTH = 5
     MATRIX_HEIGHT = 5
+    ENCODER_A = 6
+    ENCODER_B = 7
+    MOTOR_A = 10
+    MOTOR_B = 11
 else:
     raise RuntimeError("unsupported platform: " + PLATFORM)
