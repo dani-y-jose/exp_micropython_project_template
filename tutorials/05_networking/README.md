@@ -1,4 +1,4 @@
-# 04 — Networking & IoT
+# 05 — Networking & IoT
 
 The first three sections were the MCU talking to wires. This section is the MCU talking to the rest of the world. We connect to WiFi, fetch data from the public internet, host a tiny webpage, and publish sensor readings to an MQTT broker.
 

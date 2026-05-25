@@ -1,6 +1,6 @@
-# 05 — NeoPixels & LED Matrix
+# 06 — NeoPixels & LED Matrix
 
-Sections 1-4 covered MCU peripherals. This section is a deep dive into one specific kind of output device that's everywhere in maker projects: **addressable RGB LEDs**, also known as NeoPixels (Adafruit's brand name) or by the chip name **WS2812** (and the slightly-newer SK6812 variant).
+Sections 1-5 covered MCU peripherals (including the LCD in section 04). This section is a deep dive into one specific kind of output device that's everywhere in maker projects: **addressable RGB LEDs**, also known as NeoPixels (Adafruit's brand name) or by the chip name **WS2812** (and the slightly-newer SK6812 variant).
 
 We start with one pixel, then a strip, then a 2D matrix, then animations on the matrix.
 

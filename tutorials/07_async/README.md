@@ -1,6 +1,6 @@
-# 06 — asyncio (Cooperative Multitasking)
+# 07 — asyncio (Cooperative Multitasking)
 
-Sections 1-5 used a single `while True:` loop and `time.sleep()`. That model breaks down the moment your project needs to do **two things at once** — read a sensor while serving HTTP, blink a heartbeat while listening for a button, debounce ten inputs while pushing data to MQTT.
+Sections 1-6 used a single `while True:` loop and `time.sleep()`. That model breaks down the moment your project needs to do **two things at once** — read a sensor while serving HTTP, blink a heartbeat while listening for a button, debounce ten inputs while pushing data to MQTT.
 
 This section introduces `asyncio` — the single most leveraged tool in modern MicroPython. After this, every other tutorial in this repo can be re-implemented twice as cleanly.
 
@@ -91,4 +91,4 @@ No new wiring beyond what previous sections used:
 - `22_async_two_tasks.py`: add a third task at a third rate — note how trivial it is vs the equivalent in `04_hardware_timers.py`.
 - `23_async_button_event.py`: try setting the flag from inside a regular `Event` instead of `ThreadSafeFlag` — what crashes, and why?
 - `24_async_pipeline.py`: add a second consumer reading from the same queue. Items are distributed across consumers — useful for parallel processing.
-- `25_async_web_server.py`: open two browser tabs, refresh both at once. Compare to [04_networking/14_simple_web_server.py](../04_networking/14_simple_web_server.py) — the sync version serializes; this one doesn't.
+- `25_async_web_server.py`: open two browser tabs, refresh both at once. Compare to [05_networking/14_simple_web_server.py](../05_networking/14_simple_web_server.py) — the sync version serializes; this one doesn't.
